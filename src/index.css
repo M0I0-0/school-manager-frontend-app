@@ -1,0 +1,199 @@
+.MuiButton-root {
+  text-transform: none !important;
+}
+
+.MuiContainer-root {
+  width: auto;
+}
+
+.draggable-button {
+  cursor: grab;
+}
+
+.draggable-button:active {
+  cursor: grabbing;
+}
+
+.main-container {
+  transition: margin ease-in 225ms;
+  margin-top: 70px;
+  margin-right: 0px;
+  margin-left: calc(0%);
+}
+
+.footer-container {
+  margin-top: auto;
+  transition: margin ease-in 225ms;
+  margin-left: calc(0%);
+  margin-top: auto;
+  padding: 1rem 0rem;
+  background-color: #fafbfc;
+}
+
+.main-container__shift {
+  margin-left: 280px;
+}
+.main-container__mini-shift {
+  margin-left: 75px;
+}
+
+.App {
+  background: #f1f4f6;
+}
+
+.primary-company-color {
+  color: #006cb0;
+}
+
+.primary-purple-button {
+  background-color: #3f51b5;
+}
+
+.primary-purple-icon {
+  color: #3f51b5;
+}
+
+.flex-grow {
+  flex-grow: 1;
+}
+
+.left-border {
+  border: none;
+  border-left-style: solid;
+  border-left-width: 0.5em;
+}
+
+.dashboard-border {
+  border-color: rgb(0, 170, 119);
+}
+
+.academic-border {
+  border-color: rgb(170, 0, 97);
+}
+
+.finance-border {
+  border-color: rgb(0, 123, 62);
+}
+
+.security-border {
+  border-color: rgb(20, 46, 123);
+}
+
+.text-danger {
+  color: #d92550;
+}
+
+table.data-grid {
+  margin: auto;
+}
+
+.data-sheet-container {
+  overflow: auto !important;
+  padding: 1rem;
+  padding-top: 3rem;
+}
+
+.data-grid-container .data-grid .cell .value-viewer {
+  display: block;
+  box-sizing: content-box;
+  width: inherit;
+}
+
+.data-grid-container .data-grid .cell .data-editor {
+  display: block;
+  box-sizing: content-box;
+  height: inherit;
+}
+
+.data-grid-container .data-grid.nowrap .cell,
+.data-grid-container .data-grid.nowrap .cell.nowrap,
+.data-grid-container .data-grid .cell.nowrap,
+.data-grid-container .data-grid.wrap .cell.nowrap,
+.data-grid-container .data-grid.clip .cell.nowrap {
+  padding: 0.5rem;
+  position: relative;
+}
+
+.pagination-table ul {
+  flex-wrap: nowrap !important;
+  padding-left: 1rem;
+}
+
+.data-table {
+  white-space: nowrap;
+  overflow-y: hidden !important;
+  border-collapse: collapse !important;
+}
+
+td[data-sticky-td] {
+  position: sticky;
+  background-color: #fff;
+  z-index: 3 !important;
+}
+tr.Mui-selected td[data-sticky-td] {
+  background-color: #c8e2ea;
+}
+
+th[data-sticky-td] {
+  position: sticky;
+  background-color: #fafafa;
+  z-index: 4 !important;
+}
+
+tr:hover td[data-sticky-td] {
+  background-color: rgb(245, 245, 245);
+}
+
+.striped-rows tbody tr:nth-of-type(odd) {
+  background-color: rgba(196, 196, 196, 0.25);
+}
+
+.muted-header th {
+  color: #6f6f6f;
+}
+
+.validation.cell:after {
+  content: "";
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 0;
+  height: 0;
+  display: inline-block;
+  border-left: 10px solid transparent;
+  border-bottom: 10px solid transparent;
+  border-top: 10px solid #f00;
+}
+
+.cell.validation:hover:before {
+  content: attr(data-hint);
+  padding: 4px 8px;
+  color: black;
+  background-color: #fffee1;
+  position: absolute;
+  left: 0%;
+  top: -150%;
+  z-index: 10;
+  border: 1px black solid;
+  box-shadow: 0 0 3px #ccc;
+  white-space: normal;
+  text-align: left;
+  min-width: 10rem;
+}
+
+.detail-info-table {
+  table-layout: fixed;
+}
+
+.detail-info-table td {
+  overflow-wrap: break-word;
+}
+
+.MuiDialogContent-root .data-table--container {
+  position: relative;
+  max-height: calc(81vh - 70px - 42px);
+}
+
+.data-grid-container .data-grid .cell.read-only {
+  color: #000 !important;
+}

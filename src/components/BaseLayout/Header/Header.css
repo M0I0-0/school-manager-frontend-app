@@ -1,0 +1,11 @@
+.drawer-menu .MuiDrawer-paper {
+    width: 280px !important;
+    transition: all ease .4s;
+    overflow-x: hidden;
+}
+
+.mini-drawer-menu .MuiDrawer-paper {
+    width: 75px;
+    transition: all ease .4s;
+}
+
