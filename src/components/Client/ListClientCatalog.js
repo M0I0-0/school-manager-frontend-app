@@ -10,6 +10,7 @@ import { client } from "../../utils/ServicesManagerAPI/Client/Clients";
 import { ValidateResponse } from "../../validators/Response/ResponseValidator";
 import ClientMapper from "../../mappers/Client/Client";
 import Paper from "@material-ui/core/Paper";
+import DialogCreateClient from "./DialogCreateClient";
 
 
 const ListClientCatalog = () => {
@@ -20,6 +21,11 @@ const ListClientCatalog = () => {
     const [loading, setLoading] = useState(true);
     const [pageCount, setPageCount] = useState(0);
     const [totalCount, setTotalCount] = useState(0);
+    const [openCreate, setOpenCreate] = useState(false);
+
+    const toAdd = useCallback(()=>{
+        setOpenCreate(true);
+    },[]);
 
     const fetchData = useCallback(({ currentPage, perPager }) => {
         client
@@ -74,11 +80,20 @@ const ListClientCatalog = () => {
                     />
                 }
                 options={
-                    <IconButtonPermission color="success">
+                    <IconButtonPermission color="success" onClick={toAdd}>
                         <AddIcon />
                     </IconButtonPermission>
                 }
             />
+            <DialogCreateClient
+                open={openCreate}
+                onClose = {()=>setOpenCreate(false)}
+                onCreated = {()=>{
+                    fetchData({ currentPage: pageCount, perPager: itemsPerPage });
+                }}
+            >
+
+            </DialogCreateClient>
             <Grid item xs={12}>
                 <TableContainer component={Paper}>
                     <Table>
