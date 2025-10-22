@@ -1,4 +1,4 @@
-import { Backdrop } from "@material-ui/core";
+import { Backdrop, Grid, Table, TableCell, TableContainer, TableHead, TableRow, TableBody } from "@material-ui/core";
 import Content from "../BaseLayout/Content/Content";
 import Header from "../BaseLayout/Header/Header";
 import SectionLogo from "../Elements/SectionLogo/SectionLogo";
@@ -9,6 +9,8 @@ import { useCallback, useEffect, useState } from "react";
 import { client } from "../../utils/ServicesManagerAPI/Client/Clients";
 import { ValidateResponse } from "../../validators/Response/ResponseValidator";
 import ClientMapper from "../../mappers/Client/Client";
+import Paper from "@material-ui/core/Paper";
+
 
 const ListClientCatalog = () => {
     const breadcrumbs = [{ to: "/", name: "Inicio" }];
@@ -73,6 +75,37 @@ const ListClientCatalog = () => {
                     </IconButtonPermission>
                 }
             />
+            <Grid item xs={12}>
+                <TableContainer component={Paper}>
+                    <Table>
+                        <TableHead>
+                            <TableRow>
+                                <TableCell>Codigo</TableCell>  
+                                <TableCell>Protocolo</TableCell>
+                                <TableCell>Dirrecion del servidor</TableCell>  
+                                <TableCell>Puerto</TableCell>  
+                                <TableCell>Solicitud Usadas</TableCell>
+                                <TableCell>Maximo de Solicitudes</TableCell>  
+                            </TableRow>
+                        </TableHead>
+                        <TableBody>
+                            {data.length > 0 &&
+                                data.map((row, index) => (
+                                    <TableRow key={"clientRow" + index}>
+                                        <TableCell>{row.Code}</TableCell>
+                                        <TableCell>{row.Protocol}</TableCell>
+                                        <TableCell>{row.Server}</TableCell>
+                                        <TableCell>{row.ServerAdress}</TableCell>
+                                        <TableCell>{row.ServerPoint}</TableCell>
+                                        <TableCell>{row.UsedRequest}</TableCell>
+                                        <TableCell>{row.MaximumRequests}</TableCell>
+                                    </TableRow>
+                                ))
+                            }
+                        </TableBody>
+                    </Table>
+                </TableContainer>
+            </Grid>
         </Content>
     )
 };
