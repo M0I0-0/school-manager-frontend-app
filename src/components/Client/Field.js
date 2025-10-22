@@ -6,6 +6,9 @@ const Field = () => {
     return (
         <React.Fragment>
             <Grid item xs={12} md={4}>
+                <TextInput label="Nombre" name="Name" type="text" fullWidth required={true} />
+            </Grid>
+            <Grid item xs={12} md={4}>
                 <TextInput label="Apellido" name="LastName" type="text" fullWidth required={true} />
             </Grid>
             <Grid item xs={12} md={4}>
