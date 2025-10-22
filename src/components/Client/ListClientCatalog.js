@@ -1,4 +1,4 @@
-import { Backdrop, Grid, Table, TableCell, TableContainer, TableHead, TableRow, TableBody } from "@material-ui/core";
+import { Backdrop, Grid, Table, TableCell, TableContainer, TableHead, TableRow, TableBody, TablePagination } from "@material-ui/core";
 import Content from "../BaseLayout/Content/Content";
 import Header from "../BaseLayout/Header/Header";
 import SectionLogo from "../Elements/SectionLogo/SectionLogo";
@@ -58,6 +58,10 @@ const ListClientCatalog = () => {
 
         return () => (mounted = false);
     }, [itemsPerPage, pageCount, fetchData]);
+        const handleChangePage = (event, newPage) =>{
+        setLoading(true);
+        setPageCount(newPage);
+    }
     return (
         <Content>
             <Backdrop open={loading} />
@@ -94,7 +98,6 @@ const ListClientCatalog = () => {
                                     <TableRow key={"clientRow" + index}>
                                         <TableCell>{row.Code}</TableCell>
                                         <TableCell>{row.Protocol}</TableCell>
-                                        <TableCell>{row.Server}</TableCell>
                                         <TableCell>{row.ServerAdress}</TableCell>
                                         <TableCell>{row.ServerPoint}</TableCell>
                                         <TableCell>{row.UsedRequest}</TableCell>
@@ -105,6 +108,15 @@ const ListClientCatalog = () => {
                         </TableBody>
                     </Table>
                 </TableContainer>
+                <TablePagination 
+                rowsPerPageOptions={[100]}
+                component="div"
+                count={totalCount}
+                rowsPerPage={itemsPerPage}
+                page={pageCount}
+                onPageChange={handleChangePage}
+                >
+                </TablePagination>
             </Grid>
         </Content>
     )
